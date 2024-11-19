@@ -1,3 +1,4 @@
+import imprimeCotacao from "./imprimeCotacao.js";
 const graficoDolar = document.getElementById('graficoDolar');
 
 const graficoParaDolar = new Chart(graficoDolar, {
@@ -22,6 +23,8 @@ setInterval(()=> conectaApi(), 5000);
     //aqui de acordo com a api de cotação para buscar dentro do objeto USDBRL o valor ask que é o preço da cotação
     let valor = conectaTraduzido.USDBRL.ask;
     adicionarDados(graficoParaDolar, tempo , valor)
+    //depois de pronta a função imprime cotação agora colocamos na nossa função 
+    imprimeCotacao("dolar", valor);
   }
 //aqui definimos um intervalo de requisição para atualizar os dados da função acima
 
